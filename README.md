@@ -1,11 +1,6 @@
 # LANCHONETE-SENAI
 
-API da lanchonete desenvolvida com **ASP.NET Core Minimal API** e **.NET 8**.
-
-## Pré-requisitos
-
-- SDK do .NET 8
-- Git
+Interface web e API da lanchonete desenvolvidas com HTML, CSS, JavaScript e **ASP.NET Core Minimal API** .NET 8.
 
 ## Executar
 
@@ -14,32 +9,11 @@ dotnet restore
 dotnet run
 ```
 
-Por padrão, a API estará disponível em `http://localhost:5000` ou na porta informada pelo console.
+Abra `http://localhost:5000` para acessar a página web.
 
 ## Endpoints
 
-### Listar produtos
+- `GET /api/produtos`
+- `POST /api/vendas`
 
-```http
-GET /api/produtos
-```
-
-### Registrar venda
-
-```http
-POST /api/vendas
-Content-Type: application/json
-
-{
-  "cliente": "Maria",
-  "pagamento": "PIX",
-  "itens": [
-    {
-      "produtoId": 1,
-      "quantidade": 2
-    }
-  ]
-}
-```
-
-A venda somente atualiza o estoque depois que todos os itens forem validados.
+A interface usa os mesmos estilos institucionais azul, branco e laranja. A logo oficial pode ser enviada posteriormente em PNG ou SVG para substituir a marca textual.

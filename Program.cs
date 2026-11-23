@@ -4,13 +4,15 @@ builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 var produtos = new List<Produto>
 {
     new Produto(1, "X-Burger Clássico", 22.90m, 30)
 };
 
-app.MapGet("/api/produtos", () =>
-    Results.Ok(produtos));
+app.MapGet("/api/produtos", () => Results.Ok(produtos));
 
 app.MapPost("/api/vendas", (VendaDto venda) =>
 {
@@ -36,17 +38,10 @@ app.MapPost("/api/vendas", (VendaDto venda) =>
         var produto = produtos.FirstOrDefault(p => p.Id == item.ProdutoId);
 
         if (produto is null)
-            return Results.BadRequest(new
-            {
-                Erro = $"Produto {item.ProdutoId} não encontrado."
-            });
+            return Results.BadRequest(new { Erro = $"Produto {item.ProdutoId} não encontrado." });
 
         if (produto.Estoque < item.Quantidade)
-            return Results.BadRequest(new
-            {
-                Erro = "Estoque insuficiente.",
-                Produto = produto.Nome
-            });
+            return Results.BadRequest(new { Erro = "Estoque insuficiente.", Produto = produto.Nome });
 
         total += produto.Preco * item.Quantidade;
     }

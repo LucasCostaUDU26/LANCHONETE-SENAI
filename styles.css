@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --azul: #003b71;
+  --azul-claro: #0a61a9;
+  --laranja: #d75a2a;
+  --cinza: #f4f6f8;
+  --texto: #1e1e1e;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--cinza);
+}
+
+.topo {
+  min-height: 132px;
+  display: flex;
+  align-items: center;
+  padding: 16px clamp(20px, 6vw, 80px);
+  background: #fff;
+  border-bottom: 4px solid var(--azul-claro);
+}
+
+.marca {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.82;
+}
+
+.marca-senai {
+  color: var(--azul);
+  font-size: clamp(64px, 10vw, 112px);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -8px;
+  text-transform: uppercase;
+}
+
+.marca-slogan {
+  margin-top: 14px;
+  color: #111;
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 700;
+  font-style: italic;
+  text-align: right;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.hero {
+  margin-bottom: 32px;
+}
+
+.categoria {
+  color: var(--laranja);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  color: var(--azul);
+  font-size: clamp(32px, 5vw, 52px);
+  margin: 8px 0;
+}
+
+.produtos h2 {
+  color: var(--azul);
+}
+
+.lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 59, 113, 0.10);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--azul);
+}
+
+.preco {
+  color: var(--laranja);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px;
+  color: #fff;
+  background: var(--azul);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: var(--azul-claro);
+}
+
+.erro {
+  color: #a33;
+}
